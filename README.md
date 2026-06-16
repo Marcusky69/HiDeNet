@@ -1,2 +1,14 @@
-# HiDeNet
-Official PyTorch implementation of "HiDeNet: improving decomposition conditioning for paired self-supervised low-light enhancement"
+## Note
+
+This repository is the official implementation of "**HiDeNet: Improving Decomposition Conditioning for Paired Self-Supervised Low-Light Enhancement**," which is currently under review for publication in ***PeerJ Computer Science***. The core code has been open-sourced; once the paper is fully accepted, we will open-source the entire codebase.
+
+### Network
+
+<!-- Replace the path below with your actual framework diagram filename -->
+![HiDeNet Framework](fig1.png)
+
+Low-light image enhancement is essential for transforming severely degraded visual inputs into high-quality representations for both human perception and high-level downstream vision tasks. Although deep learning frameworks have significantly advanced this field, current unsupervised and self-supervised Retinex variants often introduce over-smoothing artifacts or suffer from severe noise amplification due to ill-posed decomposition conditioning. Furthermore, existing methods frequently rely on heavy, multi-stage downstream refinement networks that incur prohibitive computational and memory overheads, making them unviable for resource-constrained or real-time applications. 
+
+To address these challenges, we present HiDeNet, a streamlined, single-stage paired self-supervised image restoration framework designed to stabilize decomposition conditioning directly within the initial feature representation phase. Our approach constructs perfectly pixel-aligned training image pairs via an explicit element-wise photometric synthesis pipeline involving continuous exposure and gamma modeling, structurally eliminating spatial misalignment. Within the core architecture, we integrate an asymmetric multi-scale extraction block (MultiScaleBlock) to effectively expand the receptive field under a minimized parameter footprint, alongside a progressive hierarchical fusion mechanism (HierarchicalFusion) to robustly decouple structural reflectance from stochastic noise. 
+
+Experimental results demonstrate that HiDeNet achieves an optimal balance between restoration fidelity and computational economy, maintaining a compact footprint of 1.25M parameters and 15.62G FLOPs while executing at an average single-frame inference runtime of a mere 8.5ms (exceeding 110 FPS) on an NVIDIA RTX 4090 GPU. Crucially, without any task-specific fine-tuning, deploying HiDeNet as a zero-shot front-end pre-processing module drives downstream object detection performance on low-light test partitions from a heavily compromised baseline mAP@0.5 of 22.3% up to an optimal peak of 53.2%. This definitive quantitative margin confirms that our advanced architecture effectively restores critical semantic structures obscured by darkness, providing a highly reliable data foundation for high-level perceptual algorithms in complex operational scenarios.
