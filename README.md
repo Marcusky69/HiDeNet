@@ -37,7 +37,7 @@ The codebase is implemented in PyTorch. The directory is structured to facilitat
 * `HiDeNet/main.py`: The main entry point for managing the training lifecycle and executing testing/inference.
 * `HiDeNet/data.py`: The data preprocessing pipeline, implementing element-wise photometric synthesis.
 * `HiDeNet/dataset.py`: Encapsulates the PyTorch `Dataset` class, applying synchronized geometric augmentations.
-* `HiDeNet/net/net.py`: Contains the core architectural definitions (`MultiScaleBlock` and `HierarchicalFusion`).
+* `HiDeNet/net/net.py`: Contains the core architectural definitions (**MultiScaleBlock**) and (**HierarchicalFusion**).
 * `HiDeNet/utils.py`: Utility functions, including optimizer initialization and the Reflectance Consistency constraint ($L_{RC}$).
 * `HiDeNet/eval.py`: The evaluation script used to automate quality assessment and drive downstream detection tasks.
 * `HiDeNet/measure.py`: The metric calculation module (PSNR, SSIM, LPIPS, and downstream mAP).
