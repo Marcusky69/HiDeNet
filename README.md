@@ -9,7 +9,7 @@ The core code has been open-sourced to facilitate review and community explorati
 
 ## 1. Overview and Framework
 
-![HiDeNet Framework](fig1.png)
+![HiDeNet Framework](./HiDeNet/fig1.png)
 
 Low-light image enhancement is essential for transforming severely degraded visual inputs into high-quality representations for both human perception and downstream vision tasks. Current unsupervised and self-supervised Retinex variants often introduce over-smoothing artifacts or suffer from severe noise amplification. Furthermore, existing methods frequently rely on heavy downstream refinement networks that incur prohibitive computational overheads.
 
