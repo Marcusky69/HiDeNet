@@ -50,7 +50,7 @@ The codebase is implemented in PyTorch. The directory is structured to facilitat
 To run this code, a system equipped with a CUDA-enabled GPU is required, along with the following dependencies:
 * Python $\ge$ 3.8
 * PyTorch $\ge$ 1.12.0
-* Torchvision, OpenCV (`opencv-python`), NumPy
+* Torchvision, OpenCV (**opencv-python**), NumPy
 * Ultralytics (Required for executing the downstream object detection accuracy measurements)
 
 ```bash
