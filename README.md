@@ -3,7 +3,7 @@
 ## Note
 This repository contains the official implementation of "**HiDeNet: Improving Decomposition Conditioning for Paired Self-Supervised Low-Light Enhancement**," which is currently under review for publication in *PeerJ Computer Science*. 
 
-The entire codebase has been open-sourced to facilitate review and community exploration.
+The core code has been open-sourced to facilitate review and community exploration. Once the paper is fully accepted, we will open-source the entire codebase and pre-trained weights.
 
 ---
 
@@ -28,6 +28,8 @@ The model is trained and evaluated exclusively on the official partitions of two
 * **LOL (Low-Light) Dataset:** Utilizing the extremely dark scenes for extreme exposure recovery training (comprising 485 training pairs).
 * **SICE Dataset:** Utilized to ensure structural generalization across varied degradation levels.
 
+**Usage Compliance:** Both the LOL and SICE datasets are released under open-source licenses by their respective original authors, explicitly permitting non-commercial academic research and algorithmic evaluation. Our utilization of these datasets strictly adheres to these ethical and licensing guidelines.
+
 > *Note: The framework strictly employs the low-light images from these datasets for self-supervised optimization. No normal-light ground truths are used during training, and the model maintains zero exposure to downstream detection datasets or bounding box annotations.*
 
 ---
@@ -36,9 +38,9 @@ The model is trained and evaluated exclusively on the official partitions of two
 The codebase is implemented in PyTorch. The directory is structured to facilitate easy reproduction:
 * `HiDeNet/main.py`: The main entry point for managing the training lifecycle and executing testing/inference.
 * `HiDeNet/data.py`: The data preprocessing pipeline, implementing element-wise photometric synthesis.
-* `HiDeNet/dataset.py`: Encapsulates the PyTorch `Dataset` class, applying synchronized geometric augmentations.
-* `HiDeNet/net/net.py`: Contains the core architectural definitions **MultiScaleBlock** and **HierarchicalFusion**.
-* `HiDeNet/utils.py`: Utility functions, including optimizer initialization and the Reflectance Consistency constraint ($L_{RC}$).
+* `HiDeNet/dataset.py`: Encapsulates the PyTorch **Dataset** class, applying synchronized geometric augmentations.
+* `HiDeNet/net/net.py`: Contains the core architectural definitions (**MultiScaleBlock** and **HierarchicalFusion**).
+* `HiDeNet/utils.py`: Utility functions, including optimizer initialization and the Reflectance Consistency constraint (L_RC).
 * `HiDeNet/eval.py`: The evaluation script used to automate quality assessment and drive downstream detection tasks.
 * `HiDeNet/measure.py`: The metric calculation module (PSNR, SSIM, LPIPS, and downstream mAP).
 
@@ -50,7 +52,7 @@ The codebase is implemented in PyTorch. The directory is structured to facilitat
 To run this code, a system equipped with a CUDA-enabled GPU is required, along with the following dependencies:
 * Python $\ge$ 3.8
 * PyTorch $\ge$ 1.12.0
-* Torchvision, OpenCV (**opencv-python**), NumPy
+* Torchvision, OpenCV (`opencv-python`), NumPy
 * Ultralytics (Required for executing the downstream object detection accuracy measurements)
 
 ```bash
