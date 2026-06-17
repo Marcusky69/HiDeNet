@@ -3,7 +3,7 @@
 ## Note
 This repository contains the official implementation of "**HiDeNet: Improving Decomposition Conditioning for Paired Self-Supervised Low-Light Enhancement**," which is currently under review for publication in *PeerJ Computer Science*. 
 
-The core code has been open-sourced to facilitate review and community exploration. Once the paper is fully accepted, we will open-source the entire codebase and pre-trained weights.
+The core code has been open-sourced to facilitate review and community exploration. Once the paper is fully accepted, we will open-source the entire codebase.
 
 ---
 
