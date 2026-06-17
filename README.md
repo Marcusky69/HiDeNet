@@ -26,8 +26,8 @@ To address these challenges, we present **HiDeNet**, a streamlined, single-stage
 
 ## 2. Dataset Information
 The model is trained and evaluated exclusively on the official partitions of two publicly available datasets:
-* **LOL (Low-Light) Dataset:** Utilizing the extremely dark scenes for extreme exposure recovery training (comprising 485 training pairs).
-* **SICE Dataset:** Utilized to ensure structural generalization across varied degradation levels.
+* **[LOL (LOw-Light) Dataset](https://daooshee.github.io/BMVC2018website/):** Utilizing the extremely dark scenes for extreme exposure recovery training (comprising 485 training pairs).
+* **[SICE Dataset](https://github.com/csjcai/SICE):** Utilized to ensure structural generalization across varied degradation levels.
 
 **Usage Compliance:** Both the LOL and SICE datasets are released under open-source licenses by their respective original authors, explicitly permitting non-commercial academic research and algorithmic evaluation. Our utilization of these datasets strictly adheres to these ethical and licensing guidelines.
 
