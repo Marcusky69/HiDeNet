@@ -16,10 +16,11 @@ Low-light image enhancement is essential for transforming severely degraded visu
 To address these challenges, we present **HiDeNet**, a streamlined, single-stage paired self-supervised image restoration framework. HiDeNet stabilizes decomposition conditioning directly within the initial feature representation phase. 
 
 ### Key Highlights:
-* **Architectural Efficiency:** Integrates an asymmetric multi-scale extraction block (**MultiScaleBlock**) and a progressive hierarchical fusion mechanism (**HierarchicalFusion**).
-* **Extreme Lightness:** Achieves an optimized balance with only **1.25M parameters** and **15.62G FLOPs**.
-* **Real-time Inference:** Executes at an average single-frame inference runtime of a mere **8.5ms (>110 FPS)** on an NVIDIA RTX 4090 GPU.
-* **Zero-Shot Downstream Boost:** Acting as a frozen pre-processing module without task-specific fine-tuning, it drives downstream YOLOv8 object detection mAP@0.5 from a compromised baseline of **22.3%** up to an optimal peak of **53.2%**.
+* **Novel Decomposition Conditioning:** Instead of relying solely on reflectance consistency constraints—which often lead to over-smoothing and residual artifacts under severe degradation—HiDeNet uniquely maps low-light observations to a source-aligned proxy image. This stabilizes the input, ensuring a structure-preserving Retinex decomposition that accurately disentangles texture, shading, and noise.
+* **Robust Paired Self-Supervision:** The framework is optimized entirely using photometrically generated same-image pairs, effectively eliminating the need for any normal-light targets. It successfully overcomes the coupled degradations (weak contrast, uneven illumination, color shift) inherent in real-world low-light environments.
+* **State-of-the-Art Visual Fidelity:** On the SICE benchmark, HiDeNet achieves highly competitive quantitative metrics (**21.98 dB PSNR, 0.867 SSIM, and 0.199 LPIPS**), explicitly outperforming the primary self-supervised baseline (PairLIE). It consistently delivers superior structural preservation and lower perceptual loss across both the SICE and LOL datasets.
+* **Extreme Computational Efficiency:** Despite its robust feature disentanglement, HiDeNet maintains a highly optimized footprint of only **1.25M parameters** and **15.62G FLOPs**, executing at an average single-frame inference runtime of a mere **8.5ms (>110 FPS)** on an NVIDIA RTX 4090 GPU.
+* **Zero-Shot Downstream Boost:** Validating the practical utility of its stable illumination context and shallow-detail transfer, HiDeNet serves as a highly effective pre-processing module. Without any task-specific fine-tuning, it drives downstream YOLOv8 object detection mAP@0.5 from a compromised baseline of **22.3%** up to an optimal peak of **53.2%**.
 
 ---
 
